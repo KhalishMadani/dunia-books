@@ -8,4 +8,4 @@ class LibraryView(APIView):
     def get(self, request):
         query = Library.objects.all()
         serializer = LibrarySerializer(query, many=True)
-        return Response( {'response': serializer.data} )
+        return Response( {'data': serializer.data} )
