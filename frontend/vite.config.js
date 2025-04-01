@@ -7,6 +7,18 @@ import vueDevTools from 'vite-plugin-vue-devtools'
 
 // https://vite.dev/config/
 export default defineConfig({
+  // server: {
+  //   proxy: {
+  //     '/library': {
+  //       target: import.meta.env.VITE_API_URL,
+  //       changeOrigin: true,
+  //     },
+  //     '/media':{
+  //       target: import.meta.env.VITE_API_URL,
+  //       changeOrigin: true,
+  //     }
+  //   }
+  // },
   plugins: [
     vue(),
     vueJsx(),
