@@ -11,5 +11,12 @@ urlpatterns = [
         'library-list/',
         LibraryList.as_view(),
         name='library_list'
+    ),
+    
+    path(
+        'library-list/<int:pk>',
+        LibraryFileResponse.as_view(),
+        name='response'
     )
+
 ]

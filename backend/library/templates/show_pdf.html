@@ -11,8 +11,10 @@
         {% for obj in library %}
         <li>{{obj.book_name}} : 
             <a href="{{obj.book.url}}">{{obj.book.url}}</a>
+            <a href="{% url "response" obj.pk %}">click response</a>
         </li>
-        <img src="{{obj.image.url}}" alt="{{obj.book_name}}">
+        {% comment %} <img src="{{obj.image.url}}" alt="{{obj.book_name}}"> {% endcomment %}
+        <embed src="{{obj.book.url}}" style="width: 100vh; height: 100vh;" type="">
         {% endfor %}
     </ul>
 </body>

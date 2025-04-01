@@ -7,18 +7,18 @@ import vueDevTools from 'vite-plugin-vue-devtools'
 
 // https://vite.dev/config/
 export default defineConfig({
-  // server: {
-  //   proxy: {
-  //     '/library': {
-  //       target: import.meta.env.VITE_API_URL,
-  //       changeOrigin: true,
-  //     },
-  //     '/media':{
-  //       target: import.meta.env.VITE_API_URL,
-  //       changeOrigin: true,
-  //     }
-  //   }
-  // },
+  server: {
+    proxy: {
+      // '/library': {
+      //   target: 'http://127.0.0.1:8000/',
+      //   changeOrigin: true,
+      // },
+      '/media':{
+        target: 'http://127.0.0.1:8000/',
+        changeOrigin: true,
+      }
+    }
+  },
   plugins: [
     vue(),
     vueJsx(),

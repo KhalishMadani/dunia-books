@@ -9,13 +9,20 @@
     </ul>
 
     <canvas id="pdf-canvas">
-
     </canvas>
+
+    <!-- <div class="">
+      <embed :src="pdfs" style="width: 100vh; height: 100vh;">
+    </div> -->
   </main>
 </template>
 
 <script setup>
 import { ref, onMounted, computed, inject } from 'vue';
+import pdf from "../assets/MUHAMMAD_KHALISH_MADANI.pdf"
+
+// const pdfs = ref(pdf)
+const pdfs = "http://127.0.0.1:8000/media/pdfs/two_scoops_of_django.pdf"
 
 const api = inject('api')
 const libraries = ref([])

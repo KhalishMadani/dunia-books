@@ -6,11 +6,15 @@ from django.views import View
 from django.views.generic.list import ListView
 from django.shortcuts import get_object_or_404
 
+from django.utils.decorators import method_decorator
+from django.views.decorators.clickjacking import xframe_options_sameorigin, xframe_options_exempt
+
 from .models import Library
 from .serializer import LibrarySerializer
 
 # Create your views here.
 class LibraryView(APIView):
+    # @xframe_options_sameorigin
     def get(self, request):
         query = Library.objects.all()
         serializer = LibrarySerializer(query, many=True)
