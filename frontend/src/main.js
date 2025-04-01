@@ -15,8 +15,11 @@ import { faGithub, faLinkedin, faSearchengin } from '@fortawesome/free-brands-sv
 
 
 // Default API base URL
+const baseURL = window.location.hostname === 'localhost' ?
+import.meta.env.VITE_API_URL : 'https://6xdltwj5-8000.asse.devtunnels.ms/'
+
 const api = axios.create({
-  baseURL: import.meta.env.VITE_API_URL
+  baseURL
 })
 
 // Add icons to the library
